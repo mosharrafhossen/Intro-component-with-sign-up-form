@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intro Component</title>
+
+  <link rel="icon" type="image/png" href="images/favicon-32x32.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<main class="wrapper">
+
+  <!-- LEFT CONTENT -->
+  <section class="intro-text">
+    <h1>Learn to code by watching others</h1>
+    <p>
+      See how experienced developers solve problems in real-time.
+      Watching scripted tutorials is great, but understanding how
+      developers think is invaluable.
+    </p>
+  </section>
+
+  <!-- RIGHT CONTENT -->
+  <section class="signup-section">
+
+    <div class="trial-box">
+      <span><strong>Try it free 7 days</strong> then $20/mo. thereafter</span>
+    </div>
+
+    <form id="form" novalidate>
+
+      <div class="form-control">
+        <input type="text" placeholder="First Name" />
+        <img src="images/icon-error.svg" alt="" class="error-icon" />
+        <small>Error</small>
+      </div>
+
+      <div class="form-control">
+        <input type="text" placeholder="Last Name" />
+        <img src="images/icon-error.svg" alt="" class="error-icon" />
+        <small>Error</small>
+      </div>
+
+      <div class="form-control">
+        <input type="email" placeholder="Email Address" />
+        <img src="images/icon-error.svg" alt="" class="error-icon" />
+        <small>Error</small>
+      </div>
+
+      <div class="form-control">
+        <input type="password" placeholder="Password" />
+        <img src="images/icon-error.svg" alt="" class="error-icon" />
+        <small>Error</small>
+      </div>
+
+      <button type="submit">CLAIM YOUR FREE TRIAL</button>
+
+      <p class="terms">
+        By clicking the button, you are agreeing to our
+        <span>Terms and Services</span>
+      </p>
+
+    </form>
+
+  </section>
+
+</main>
+
+<script>
+const form = document.getElementById("form");
+const inputs = document.querySelectorAll("input");
+
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  inputs.forEach(input => {
+
+    if(input.value.trim() === ""){
+      showError(input, input.placeholder + " cannot be empty");
+    }
+    else if(input.type === "email" && !validateEmail(input.value)){
+      showError(input, "Looks like this is not an email");
+    }
+    else{
+      removeError(input);
+    }
+
+  });
+});
+
+function showError(input, message){
+  const parent = input.parentElement;
+  parent.classList.add("error");
+  parent.querySelector("small").innerText = message;
+}
+
+function removeError(input){
+  input.parentElement.classList.remove("error");
+}
+
+function validateEmail(email){
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+</script>
+
+</body>
+</html>
