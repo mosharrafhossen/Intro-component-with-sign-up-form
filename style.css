@@ -1,4 +1,4 @@
-/* RESET */
+
 *,
 *::before,
 *::after {
@@ -7,7 +7,6 @@
   padding: 0;
 }
 
-/* ROOT COLORS */
 :root {
   --red: hsl(0, 100%, 74%);
   --green: hsl(154, 59%, 51%);
@@ -28,7 +27,6 @@ body {
   background-size: cover;
 }
 
-/* MAIN WRAPPER */
 .wrapper {
   max-width: 1110px;
   display: flex;
@@ -37,7 +35,6 @@ body {
   color: white;
 }
 
-/* LEFT */
 .intro-text {
   flex: 1;
 }
@@ -54,12 +51,10 @@ body {
   line-height: 1.6;
 }
 
-/* RIGHT */
 .signup-section {
   flex: 1;
 }
 
-/* TRIAL BOX */
 .trial-box {
   background: var(--purple);
   padding: 1rem;
@@ -73,7 +68,6 @@ body {
   font-weight: 700;
 }
 
-/* FORM */
 form {
   background: white;
   padding: 2.5rem;
@@ -100,7 +94,6 @@ input:focus {
   border-color: transparent;
 }
 
-/* BUTTON */
 button {
   width: 100%;
   padding: 1rem;
@@ -119,7 +112,6 @@ button:hover {
   opacity: 0.9;
 }
 
-/* TERMS */
 .terms {
   font-size: 0.75rem;
   text-align: center;
@@ -132,7 +124,6 @@ button:hover {
   font-weight: 600;
 }
 
-/* ERROR STATE */
 .error input {
   border: 2px solid var(--red);
 }
@@ -158,7 +149,6 @@ small {
   display: block;
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
 
   body {

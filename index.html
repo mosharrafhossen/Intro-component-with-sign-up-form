@@ -7,8 +7,7 @@
 
   <link rel="icon" type="image/png" href="images/favicon-32x32.png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inder&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap">
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -17,7 +16,6 @@
 
 <main class="wrapper">
 
-  <!-- LEFT CONTENT -->
   <section class="intro-text">
     <h1>Learn to code by watching others</h1>
     <p>
@@ -27,7 +25,6 @@
     </p>
   </section>
 
-  <!-- RIGHT CONTENT -->
   <section class="signup-section">
 
     <div class="trial-box">
@@ -39,7 +36,7 @@
       <div class="form-control">
         <input type="text" placeholder="First Name" />
         <img src="images/icon-error.svg" alt="" class="error-icon" />
-        <small>Error</small>
+        <small>Error</small>                                                     <!--Why-->
       </div>
 
       <div class="form-control">
@@ -57,7 +54,7 @@
       <div class="form-control">
         <input type="password" placeholder="Password" />
         <img src="images/icon-error.svg" alt="" class="error-icon" />
-        <small>Error</small>
+        <small>Error</small> 
       </div>
 
       <button type="submit">CLAIM YOUR FREE TRIAL</button>
@@ -73,42 +70,7 @@
 
 </main>
 
-<script>
-const form = document.getElementById("form");
-const inputs = document.querySelectorAll("input");
-
-form.addEventListener("submit", function(e){
-  e.preventDefault();
-
-  inputs.forEach(input => {
-
-    if(input.value.trim() === ""){
-      showError(input, input.placeholder + " cannot be empty");
-    }
-    else if(input.type === "email" && !validateEmail(input.value)){
-      showError(input, "Looks like this is not an email");
-    }
-    else{
-      removeError(input);
-    }
-
-  });
-});
-
-function showError(input, message){
-  const parent = input.parentElement;
-  parent.classList.add("error");
-  parent.querySelector("small").innerText = message;
-}
-
-function removeError(input){
-  input.parentElement.classList.remove("error");
-}
-
-function validateEmail(email){
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
